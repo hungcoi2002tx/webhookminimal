@@ -1,0 +1,154 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "WebhookMinimalApi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "operationId": "HealthCheck",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/healthcheck/urls": {
+      "get": {
+        "tags": [
+          "HealthCheck"
+        ],
+        "operationId": "ListHealthCheckUrls",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/healthcheck/{name}": {
+      "post": {
+        "tags": [
+          "HealthCheck"
+        ],
+        "operationId": "CheckHealthUrl",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/healthcheck/all": {
+      "post": {
+        "tags": [
+          "HealthCheck"
+        ],
+        "operationId": "CheckAllHealthUrls",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/scripts": {
+      "get": {
+        "tags": [
+          "Scripts"
+        ],
+        "operationId": "ListScripts",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/scripts/{name}/execute": {
+      "post": {
+        "tags": [
+          "Scripts"
+        ],
+        "operationId": "ExecuteScript",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/scripts/{name}/kill": {
+      "delete": {
+        "tags": [
+          "Scripts"
+        ],
+        "operationId": "KillScript",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/scripts/{name}/log": {
+      "get": {
+        "tags": [
+          "Scripts"
+        ],
+        "operationId": "GetScriptLog",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}
